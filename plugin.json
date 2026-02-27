@@ -1,0 +1,47 @@
+{
+  "Id": "4DA3959B-CB61-43A7-865C-7FDE658340FA",
+  "Name": "Currency Converter",
+  "Description": "Convert currencies using exchangerate-api.com",
+  "Author": "sanioooook",
+  "Version": "1.0.0",
+  "MinWoxVersion": "2.0.0",
+  "Runtime": "Nodejs",
+  "Entry": "index.js",
+  "Icon": "relative:images/app.png",
+  "TriggerKeywords": ["*"],
+  "SupportedOS": ["Windows", "Darwin", "Linux"],
+  "Features": [
+    {
+      "Name": "debounce",
+      "Params": { "IntervalMs": "300" }
+    }
+  ],
+  "SettingDefinitions": [
+    {
+      "Type": "head",
+      "Value": {
+        "Content": "exchangerate-api.com settings"
+      }
+    },
+    {
+      "Type": "textbox",
+      "Value": {
+        "Key": "apiKey",
+        "Label": "API Key",
+        "Tooltip": "Get your free API key at https://app.exchangerate-api.com",
+        "DefaultValue": "",
+        "Style": { "Width": 400 }
+      }
+    },
+    {
+      "Type": "textbox",
+      "Value": {
+        "Key": "favoriteCurrencies",
+        "Label": "Favorite target currencies",
+        "Tooltip": "Comma-separated list, e.g. EUR,GBP,JPY. Used when no target currency is specified in the query.",
+        "DefaultValue": "USD,EUR",
+        "Style": { "Width": 400 }
+      }
+    }
+  ]
+}
