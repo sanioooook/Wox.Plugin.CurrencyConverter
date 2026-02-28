@@ -27,6 +27,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Set version in plugin.json
+        run: |
+          VERSION="${{ github.ref_name }}"
+          VERSION="${VERSION#v}"
+          sed -i "s/\"Version\": \".*\"/\"Version\": \"$VERSION\"/" plugin.json
+
       - name: Build
         run: npx ncc build src/index.ts -o dist
 
